@@ -1,0 +1,33 @@
+version: 2.1
+
+jobs:
+  api-tests:
+    docker:
+      - image: cimg/node:18.0
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install Newman
+          command: npm install -g newman
+
+      - run:
+          name: Run Postman Tests
+          command: |
+            newman run tests/otp-tests.postman_collection.json \
+            -e tests/env.json \
+            --reporters cli,junit \
+            --reporter-junit-export results.xml
+
+      - store_test_results:
+          path: results.xml
+
+      - store_artifacts:
+          path: results.xml
+
+workflows:
+  version: 2
+  test-workflow:
+    jobs:
+      - api-tests
