@@ -1,0 +1,71 @@
+{
+  "info": {
+    "_postman_id": "b815a17a-476f-41a7-8eac-d3865d5d0efb",
+    "name": "otp-tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13282279"
+  },
+  "item": [
+    {
+      "name": "tokengen",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic ZGV2ZWxvcG1lbnQ6a3MlcnJSK1NKNSZDWFAzag=="
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-msisdn",
+            "value": "797891196"
+          },
+          {
+            "key": "x-source-system",
+            "value": "ussd"
+          },
+          {
+            "key": "x-correlation-conversationid",
+            "value": "1759749648"
+          },
+          {
+            "key": "x-app",
+            "value": "ussd"
+          },
+          {
+            "key": "x-messageid",
+            "value": "iruiwSAkjsdsjdkuwu2332k|CF8SP6nH|WXEZphKz"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"development\",\n    \"password\": \"ks%rrR+SJ5&CXP3j\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://10.184.18.142:32356/auth/token",
+          "protocol": "https",
+          "host": [
+            "10",
+            "184",
+            "18",
+            "142"
+          ],
+          "port": "32356",
+          "path": [
+            "auth",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
